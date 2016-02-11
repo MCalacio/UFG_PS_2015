@@ -30,7 +30,7 @@ Processo de software 2015, [Template]Plano de Qualidade de Software
 [_Referenciar todas as fontes de informações e referências utilizadas pelo documento_]
 
 ### 1.3 Escopo
-[_Descrição detalhada do escopo do projeto EveRemind_]
+[_Descrição detalhada do escopo do projeto_]
 
 2. Objetivos de Qualidade
 --------------------------
