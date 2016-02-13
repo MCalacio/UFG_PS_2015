@@ -40,16 +40,11 @@ Este documento tem como objetivo apresentar o escopo, Requisitos Funcionais, Nã
 
 ### 1.1 Objetivos
 
-[_Definir os objetivos do documento._]	
-_Exemplo:_
 _Este documento tem os seguintes objetivos:_
-•	[_Definir os interessados no sistema e as suas necessidades que devem ser satisfeitas pelo sistema a ser desenvolvido;_]
-•	[_Derivar os casos de uso e requisitos do sistema de forma a orientar a equipe de que será responsável pelo seu desenvolvimento;_]	
-•	[_Estabelecer um contrato para negociação e concordância entre todos os interessados;_]	
-•	[_Reduzir retrabalho com projeto, codificação e teste através da especificação rigorosa e completa dos requisitos;_]	
-•	[_Prover uma base para avaliação de prazos e custos de desenvolvimento;_]
-•	[_Facilitar a transferência dos produtos do desenvolvimento para novos usuários, novos clientes, novos ambientes operacionais e novas equipes de desenvolvimento e manutenção;_]	
-•	[_Prover uma base para a evolução futura do sistema a partir de uma versão aprovada (linha de base) deste documento._]	
+*	Definir os interessados no sistema e as suas necessidades que devem ser satisfeitas pelo sistema a ser desenvolvido;
+*	Derivar os casos de uso e requisitos do sistema de forma a orientar a equipe de que será responsável pelo seu desenvolvimento;	
+*	Facilitar a transferência dos produtos do desenvolvimento para novos usuários, novos clientes, novos ambientes operacionais e novas    quipes de desenvolvimento e manutenção;	
+*	Prover uma base para a evolução futura do sistema a partir de uma versão aprovada (linha de base) deste documento.	
 
 ### 1.2 Público Alvo
 
@@ -58,6 +53,7 @@ _Este documento tem os seguintes objetivos:_
 * Gerente de Qualidade: Para poder validar a qualidade do documento.
 * Analista de Testes: Para poder já começar a criar os casos de teste.
 * Gerente de Projeto: O gerente tem de estar informado sobre o andamento do  projeto.
+
 ### 1.3 Organização do documento
 
 Aqui será descrito a organização do documento de requisitos:
@@ -87,11 +83,11 @@ UC | User Case(Caso de Uso)
 
 ### 2.1 Identificação e missão do Sistema
 
-O sistema é o Mr. Imune que tem como objetivo transformar o histórico de vacinas da população de um meio fisico para digital.
+O Mr Imune é programa multiplataforma (aplicação mobile e web) que tem como objetivo transformar o histórico de vacinas da população de um meio fisico para digital.
 
 ### 2.2 Domínio do problema e contexto de sua aplicação
 
-Atualmente a população anda utilizando de um meio fisico, que no caso seria o papel, para organizar as vacinas que tomou. O problema é que a pessoa pode acabar perdendo o documento e as pessoas responsáveis pelo campo da saúde não tem controle do que a pessoa tomou nesses casos. O Sistema ajudará nesse ponto, deixando as informações da população segura, de modo que não se perca caso ocorra algo.
+Atualmente a população brasileira ainda utiliza do papel para organizar as vacinas que já tomou. Com isso pode ocorrer perdas de documento e assim as pessoas responsáveis pelo campo da saúde não teriam controle das vacinas que a pessoa tomou. O Sistema ajudará nesse ponto, deixando as informações da população segura.
 
 ### 2.3 Descrição dos interessados do sistema
 
@@ -103,11 +99,11 @@ _Descrever os perfis de cada interessado envolvido com o sistema._
 
 | Interessado(s) 	| Descrição 	|
 |:----------------:	|---------	|
-| Paciente | pessoa que pode acessar a qualquer momento o seu histórico de vacinas na internet |
+| Paciente | essoa que pode acessar a qualquer momento o seu histórico de vacinas na internet |
 
 | Interessado(s) 	| Descrição 	|
 |:----------------:	|---------	|
-| Agente de saúde | pessoa que pode acessar e registrar as vacinas assim que o paciente é imunizado. |
+| Agente de saúde | Pessoa que pode acessar e registrar as vacinas assim que o paciente é imunizado. |
 
 | Interessado(s) 	| Descrição 	|
 |:----------------:	|---------	|
@@ -249,18 +245,85 @@ _Cada caso de uso deve receber um identificador único, ser categorizado em prim
 
 _Requisitos Funcionais:_
 
-| Ref.     |                          Descrição                       	| Categoria | Prioridade |
-|-------|----------------------------------------------------------|---------------|---------------|
-| RF-01 | Cadastro de novos usuários: No sistema de Cadastro será incluído o usuários de três maneiras:
- | [_Evidente_] | Alta |
-| [_RFUN 1.2_] | [_Calcular e exibir o total parcial da venda a cada item informado_] | [_Evidente_] | [_Alta_] |
-| [_RFUN 1.3_] | [_Registrar o valor recebido para venda realizada_] | [_Evidente_] | [_Alta_] |
-| [_RFUN 1.4_] | [_Calcular e exibir o troco para o pagamento em dinheiro_] | [_Evidente_] | [_Alta_] |
-| [_RFUN 1.5_] | [_Emitir recibo de pagamento_] | [_Evidente_] | [_Alta_] |
-| [_RFUN 1.6_] | [_Atualizar o estoque do produto vendido_] | [_Evidente_] | [_Alta_] |
-| [_RFUN 1.7_] | [_Registrar dados da venda realizada (data, hora, PDV, produtos vendidos...)_] | [_Evidente_] | [_Alta_]
+[RF001] Cadastro de Pacientes 
 
+O sistema deve permitir que o registrador cadastre novos pacientes maiores de 18 anos e também deve permitir ao paciente se auto cadastrar. 
 
+Para o cadastro as seguintes informações são obrigatoriamente necessárias: Nome completo do paciente, data de nascimento e CPF.
+Informações opcionais: Telefone(s) para contato, email, código postal, endereço.
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF002] Cadastro de Dependentes 
+O sistema deve permitir que o registrador e um paciente maior de 18 anos cadastrem pacientes menores de 18 anos como dependentes. 
+Para o cadastro de dependetes as seguintes informações são obrigatoriamente necessárias: Nome completo do dependente, data de nascimento do dependete e CPF do responsável. No final do cadastro os dados do dependente são linkados ao do paciente responsável cadastrado [RF001]. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF003] Efetivação de cadastro de paciente 
+O sistema deve gerar uma senha única para o paciente cadastrado [RF001]. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF004] Editar Cadastro de Paciente 
+O sistema deve permitir ao paciente editar seus dados com exceção do CPF. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF005] Cadastro de Vacinas 
+O sistema deve permitir que o administrador geral e o administrador de secretaria cadastrarem novas vacinas.
+As seguintes informações são obrigatoriamente necessárias: Identificador único da vacina (fornecido pelo ministério da saúde), nome da vacina, grupo alvo e faixa etária da vacina (de acordo com o calendário nacional de vacinação).
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF006] Cadastro de Funcionários 
+O sistema deve permitir o cadastro de administradores gerais, administradores de secretaria, registradores e agentes de saúde.
+Para cadastrar funcionários as seguintes informações são obrigatoriamente necessárias: Nome Completo, CPF, Data de Nascimento.
+Informações Opcionais: Telefone para contato, email, código postal e endereço.
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF007] Efetivação de Cadastro de funcionário  
+O sistema deve gerar uma senha única para o funcionário cadastrado [RF005]. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF008] Registrar Vacinação 
+O sistema deve permitir ao agente de saúde registrar no sistema a vacina tomada pelo paciente. 
+Para registrar a vacina tais informações são necessárias: CPF cadastrado do paciente [RF001], CPF cadastrado do agente de saúde, identificador da vacina cadastrada [RF004], senha do agente de saúde [RF006]. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF009] Cadastrar Campanha 
+O sistema deve permitir que o Administrador Geral e o Agente de Saúde cadastrem uma campanha. 
+Para o cadastro de campanha as seguintes informações são obrigatoriamente necessárias: Nome da campanha, Data de inicio e término da campanha, identificador único da vacina, nome da vacina [RF004], grupo alvo e faixa etária [RF004], região onde a campanha será realizada. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+ 
+[RF010] Histórico de Vacinas 
+O sistema de permitir a visualização do histórico de vacinas tomadas pelo paciente. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF011] Editar Campanha  
+O sistema deve permitir que o administrador geral e o agente de saúde editem uma campanha. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF012] Deletar Campanha  
+O sistema deve permitir que o administrador geral delete uma campanha. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF013] Deletar Vacina 
+O sistema deve permitir que o administrador geral delete uma vacina. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
+
+[RF014] Alerta de Vacina 
+O sistema deve emitir um alerta de vacina para o paciente. 
+Prioridade: Alta 
+Fonte Responsável: Desenvolvedor 
 
 
 ## 5. Requisitos Futuros (RFUT)
